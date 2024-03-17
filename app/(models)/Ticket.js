@@ -1,5 +1,13 @@
 import mongoose from "mongoose";
-import { Trykker } from "next/font/google";
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("Connected to the server");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 const schema = mongoose.Schema(
   {
