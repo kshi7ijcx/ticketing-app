@@ -18,7 +18,7 @@ const TicketForm = () => {
     e.preventDefault();
     const res = await fetch("/api/Tickets", {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: JSON.stringify({formData}),
       "content-type": "application/json",
     });
     if (!res.ok) {
@@ -34,7 +34,7 @@ const TicketForm = () => {
     priority: 1,
     progress: 0,
     status: "not started",
-    category: "Harware Problem",
+    category: "Hardware Problem",
   };
 
   const [formData, setFormData] = useState(startingTicketData);
